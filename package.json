@@ -1,7 +1,7 @@
 {
   "name": "portfolio-backend",
   "version": "1.0.0",
-  "main": "index.js",    // <-- MAKE SURE THIS MATCHES YOUR FILENAME EXACTLY (e.g., index.js or server.js)
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
