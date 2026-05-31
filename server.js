@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
+const https = require('https'); // Required for the keep-alive script
 const app = express();
 
-// Enable CORS so Jinan's Vercel frontend can securely communicate with this Render server
+// Enable CORS so Jinan's Vercel frontend can securely communicate with this server
 app.use(cors());
 
 // Express built-in middleware to parse incoming JSON payload streams
@@ -63,3 +64,13 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Jinan Backend running smoothly on assigned port architecture: ${PORT}`);
 });
+
+// Keep-alive ping routine for Render Free Tier
+// Automatically pings Jinan's backend URL every 10 minutes to prevent it from going to sleep
+setInterval(() => {
+    https.get('https://jinan-portfolio-backend.onrender.com/', (res) => {
+        console.log('Keep-alive baseline ping executed successfully.');
+    }).on('error', (err) => {
+        console.error('Keep-alive baseline ping error:', err.message);
+    });
+}, 600000); // 600,000 ms = 10 minutes
