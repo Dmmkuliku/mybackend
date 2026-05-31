@@ -1,15 +1,12 @@
 {
-  "name": "jinan-portfolio-backend",
+  "name": "portfolio-backend",
   "version": "1.0.0",
-  "description": "Express backend server engine for Jinan data science portfolio layout assignment",
-  "main": "server.js",
+  "main": "index.js",    // <-- MAKE SURE THIS MATCHES YOUR FILENAME EXACTLY (e.g., index.js or server.js)
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
-  },
-  "author": "Jinan",
-  "license": "ISC"
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
 }
